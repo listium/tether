@@ -1,7 +1,6 @@
-let TetherBase;
-if (typeof TetherBase === 'undefined') {
-  TetherBase = {modules: []};
-}
+const TetherBase = {modules: []};
+
+export default TetherBase;
 
 let zeroElement = null;
 
@@ -324,7 +323,7 @@ class Evented {
   }
 }
 
-TetherBase.Utils = {
+export {
   getScrollParents,
   getBounds,
   getOffsetParent,

@@ -1,10 +1,6 @@
-/* globals TetherBase, performance */
+/* globals performance */
 
-if (typeof TetherBase === 'undefined') {
-  throw new Error('You must include the utils.js file before tether.js');
-}
-
-const {
+import TetherBase, {
   getScrollParents,
   getBounds,
   getOffsetParent,
@@ -15,8 +11,13 @@ const {
   defer,
   flush,
   getScrollBarSize,
-  removeUtilElements
-} = TetherBase.Utils;
+  removeUtilElements,
+  Evented
+} from './utils';
+
+import './constraint';
+import './abutment';
+import './shift';
 
 function within(a, b, diff=1) {
   return (a + diff >= b && b >= a - diff);
@@ -807,3 +808,5 @@ TetherClass.modules = [];
 TetherBase.position = position;
 
 let Tether = extend(TetherClass, TetherBase);
+
+export default Tether;

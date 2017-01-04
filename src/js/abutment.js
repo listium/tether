@@ -1,6 +1,4 @@
-/* globals TetherBase */
-
-const {getBounds, updateClasses, defer} = TetherBase.Utils;
+import TetherBase, {getBounds, updateClasses, defer} from './utils';
 
 TetherBase.modules.push({
   position({top, left}) {
